@@ -1,0 +1,143 @@
+[
+  {
+    "id": "re-classic-350",
+    "brand": "Royal Enfield",
+    "name": "Classic 350",
+    "category": "Cruiser",
+    "status": "Available",
+    "image": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80",
+    "pricing": {
+      "originalPrice": "₹2,20,000",
+      "currentPrice": "₹1,93,000",
+      "projectedPrice": "₹2,05,000",
+      "discount": "12% OFF",
+      "offers": [
+        "₹5,000 Flat Exchange Bonus",
+        "Zero Downpayment EMI Options",
+        "Free 3-Year Extended Warranty"
+      ]
+    },
+    "specs": {
+      "engine": "349 cc",
+      "power": "20.2 bhp",
+      "mileage": "36 kmpl",
+      "weight": "195 kg"
+    },
+    "features": {
+      "has360": true,
+      "audio": "classic350.mp3"
+    }
+  },
+  {
+    "id": "ktm-duke-390",
+    "brand": "KTM",
+    "name": "Duke 390",
+    "category": "Sports",
+    "status": "Available",
+    "image": "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=600&q=80",
+    "pricing": {
+      "originalPrice": "₹3,40,000",
+      "currentPrice": "₹3,11,000",
+      "projectedPrice": "₹3,25,000",
+      "discount": "8% OFF",
+      "offers": [
+        "Complimentary Riding Jacket",
+        "Low Interest Rate (6.99% EMI)"
+      ]
+    },
+    "specs": {
+      "engine": "399 cc",
+      "power": "45 bhp",
+      "mileage": "28 kmpl",
+      "weight": "168 kg"
+    },
+    "features": {
+      "has360": true,
+      "audio": "duke390.mp3"
+    }
+  },
+  {
+    "id": "tvs-apache-rr310",
+    "brand": "TVS",
+    "name": "Apache RR 310",
+    "category": "Sports",
+    "status": "Available",
+    "image": "https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=600&q=80",
+    "pricing": {
+      "originalPrice": "₹2,85,000",
+      "currentPrice": "₹2,72,000",
+      "projectedPrice": "₹2,80,000",
+      "discount": "5% OFF",
+      "offers": [
+        "Free Track Day Experience",
+        "₹3,000 Cash Back on Credit Card"
+      ]
+    },
+    "specs": {
+      "engine": "312.2 cc",
+      "power": "34 bhp",
+      "mileage": "30 kmpl",
+      "weight": "174 kg"
+    },
+    "features": {
+      "has360": true,
+      "audio": "apacherr310.mp3"
+    }
+  },
+  {
+    "id": "re-himalayan-450",
+    "brand": "Royal Enfield",
+    "name": "Himalayan 450",
+    "category": "Adventure",
+    "status": "Available",
+    "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=600&q=80",
+    "pricing": {
+      "originalPrice": "₹3,05,000",
+      "currentPrice": "₹2,85,000",
+      "projectedPrice": "₹2,95,000",
+      "discount": "6% OFF",
+      "offers": [
+        "Free Pannier Mounts",
+        "50% Off on Touring Accessories"
+      ]
+    },
+    "specs": {
+      "engine": "452 cc",
+      "power": "40 bhp",
+      "mileage": "30 kmpl",
+      "weight": "196 kg"
+    },
+    "features": {
+      "has360": true,
+      "audio": "himalayan450.mp3"
+    }
+  },
+  {
+    "id": "bajaj-chetak-ev",
+    "brand": "Bajaj",
+    "name": "Chetak Premium",
+    "category": "EV",
+    "status": "Available",
+    "image": "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80",
+    "pricing": {
+      "originalPrice": "₹1,30,000",
+      "currentPrice": "₹1,15,000",
+      "projectedPrice": "₹1,22,000",
+      "discount": "11% OFF",
+      "offers": [
+        "FAME II Subsidy Benefits Included",
+        "Free Home Charger Installation"
+      ]
+    },
+    "specs": {
+      "engine": "3.2 kWh Battery",
+      "power": "4.2 kW Motor",
+      "mileage": "126 km Range",
+      "weight": "133 kg"
+    },
+    "features": {
+      "has360": false,
+      "audio": "chetak.mp3"
+    }
+  }
+]
