@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeSphere Elite | Ultimate Indian Bike Showcase & Comparison</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-deep: #0a0b0e;
+            --bg-card: rgba(18, 20, 28, 0.7);
+            --neon-orange: #ff5722;
+            --neon-cyan: #00f0ff;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(255, 87, 34, 0.3);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; user-select: none; }
+        body { background-color: var(--bg-deep); color: var(--text-main); min-height: 100vh; overflow-x: hidden; }
+
+        /* HEADER & NAVIGATION */
+        header { position: sticky; top: 0; z-index: 1000; background: rgba(10, 11, 14, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.6rem; font-weight: 900; color: var(--text-main); letter-spacing: 1px; }
+        .logo span { color: var(--neon-orange); }
+
+        .nav-search { flex: 0 1 400px; position: relative; }
+        .nav-search input { width: 100%; padding: 10px 16px 10px 42px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; color: #fff; font-size: 0.95rem; outline: none; transition: var(--transition); }
+        .nav-search input:focus { border-color: var(--neon-orange); box-shadow: 0 0 15px rgba(255, 87, 34, 0.2); }
+        .nav-search i { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+
+        .nav-actions { display: flex; gap: 15px; align-items: center; }
+        .btn-compare { background: linear-gradient(135deg, var(--neon-orange), #ff9800); border: none; color: #fff; padding: 8px 18px; border-radius: 20px; font-weight: 600; cursor: pointer; transition: var(--transition); box-shadow: 0 4px 15px rgba(255,87,34,0.3); }
+        .btn-compare:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,87,34,0.5); }
+
+        /* HERO BANNER SECTION */
+        .hero { padding: 40px 30px; text-align: center; background: radial-gradient(circle at center, rgba(255,87,34,0.12) 0%, transparent 70%); }
+        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
+        .hero p { color: var(--text-muted); font-size: 1.1rem; }
+
+        /* FILTER TABS */
+        .filter-container { display: flex; justify-content: center; gap: 10px; padding: 0 30px 30px; flex-wrap: wrap; }
+        .filter-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); padding: 8px 20px; border-radius: 20px; cursor: pointer; font-weight: 600; transition: var(--transition); }
+        .filter-btn.active, .filter-btn:hover { background: var(--neon-orange); color: #fff; border-color: var(--neon-orange); box-shadow: 0 0 12px rgba(255,87,34,0.4); }
+
+        /* BIKE GRID CONTAINER */
+        .main-container { max-width: 1300px; margin: 0 auto; padding: 0 30px 60px; }
+        .bike-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+
+        /* BIKE CARD DESIGN */
+        .bike-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .bike-card:hover { transform: translateY(-6px); border-color: var(--border-glow); box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,87,34,0.15); }
+        
+        .card-badge { position: absolute; top: 15px; left: 15px; background: rgba(0,0,0,0.6); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.1); padding: 4px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: 700; color: var(--neon-cyan); z-index: 2; }
+        
+        .card-img-box { width: 100%; height: 200px; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+        .card-img-box img { width: 90%; height: 90%; object-fit: contain; transition: transform 0.5s ease; }
+        .bike-card:hover .card-img-box img { transform: scale(1.08); }
+
+        .card-content { padding: 20px; }
+        .bike-brand { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .bike-title { font-size: 1.25rem; font-weight: 700; margin: 5px 0 12px; font-family: 'Orbitron', sans-serif; }
+        
+        .specs-row { display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 12px; margin-bottom: 15px; font-size: 0.85rem; color: var(--text-muted); }
+        .specs-row span b { color: #fff; font-weight: 600; }
+
+        .price-section { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .current-price { font-size: 1.25rem; font-weight: 700; color: #fff; font-family: 'Orbitron', sans-serif; }
+        .discount-tag { background: rgba(76, 175, 80, 0.15); color: #4caf50; font-size: 0.75rem; font-weight: 700; padding: 3px 8px; border-radius: 6px; border: 1px solid rgba(76, 175, 80, 0.3); }
+
+        .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .btn-action { padding: 10px; border-radius: 12px; font-weight: 600; font-size: 0.9rem; cursor: pointer; border: none; transition: var(--transition); text-align: center; }
+        .btn-details { background: rgba(255,255,255,0.07); color: #fff; border: 1px solid rgba(255,255,255,0.1); }
+        .btn-details:hover { background: rgba(255,255,255,0.15); }
+        .btn-360 { background: rgba(0, 240, 255, 0.1); color: var(--neon-cyan); border: 1px solid rgba(0, 240, 255, 0.3); }
+        .btn-360:hover { background: rgba(0, 240, 255, 0.2); }
+
+        /* RESPONSIVE DESIGN */
+        @media(max-width: 768px) {
+            header { padding: 15px 15px; flex-direction: column; gap: 12px; }
+            .nav-search { width: 100%; }
+            .hero h1 { font-size: 1.8rem; }
+            .main-container { padding: 0 15px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="logo">BIKE<span>SPHERE</span></div>
+        <div class="nav-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Search Classic 350, Ninja, Duke...">
+        </div>
+        <div class="nav-actions">
+            <button class="btn-compare"><i class="fa-solid fa-code-compare"></i> Compare (<span id="compareCount">0</span>)</button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>NEXT-GEN INDIAN BIKE MATRIX</h1>
+        <p>Explore complete specifications, live pricing history, offers, and immersive 360° views.</p>
+    </section>
+
+    <!-- CATEGORY FILTER TABS -->
+    <div class="filter-container" id="filterContainer">
+        <button class="filter-btn active" data-filter="all">All Models</button>
+        <button class="filter-btn" data-filter="Cruiser">Cruisers</button>
+        <button class="filter-btn" data-filter="Sports">Sports & Naked</button>
+        <button class="filter-btn" data-filter="Adventure">Adventure</button>
+        <button class="filter-btn" data-filter="EV">Electric (EV)</button>
+    </div>
+
+    <!-- MAIN GRID -->
+    <main class="main-container">
+        <div class="bike-grid" id="bikeGrid">
+            <!-- Dynamic Bikes will load here via JavaScript -->
+        </div>
+    </main>
+
+    <script>
+        // Initial test rendering placeholder to verify UI layout
+        console.log("BikeSphere UI Loaded Successfully!");
+    </script>
+</body>
+</html>
